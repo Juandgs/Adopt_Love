@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('encargado_funds', function (Blueprint $table) {
             $table->id();
             $table->foreignId('persona_id')->constrained('personas')->onDelete('cascade');
-            $table->foreignId('fk_id_fundacion')->constrained('fundaciones')->onDelete('cascade');
+            $table->foreignId('fk_id_fundacion')->constrained('fundacions')->onDelete('cascade');
             $table->timestamps();
         });
     }
