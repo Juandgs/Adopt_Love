@@ -15,12 +15,9 @@ class Productos extends Model
         'precio',
         'cantidad',
         'tipoProducto',
-        'vendedor_id'
+        'imagen',
     ];
 
-    public function vendedores():BelongsTo{
-        return $this->belongsTo(Vendedores::class, 'vendedor_id');
-    }
     public function productosComprados():HasMany{
         return $this->hasMany(productosComprados::class, 'fk_id_productos');
     }
