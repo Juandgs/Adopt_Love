@@ -21,15 +21,15 @@
         <div class="TU">
         <button class="iniciar_sesion">
             <img src="{{ asset('images/fondTienda.jpg') }}">
-            <h1><a href="{{ route('login') }}">Vendedor</a></h1>
+            <h1><a href="{{ route('registroVendedor') }}">Vendedor</a></h1>
         </button>
         <button class="iniciar_sesion" >
             <img src="{{ asset('images/fondInteresado.png') }}">
-            <h1><a href="{{ route('login') }}">Interesado</a></h1>
+            <h1><a href="{{ route('registroComprador') }}">CLiente</a></h1>
         </button>
         <button class="iniciar_sesion" >
             <img src="{{ asset('images/fondFundacion.jpg') }}">
-            <h1><a href="{{ route('login') }}">Fundacion</a></h1>
+            <h1><a href="{{ route('registroEncargado') }}">Fundacion</a></h1>
         </button>
         
     </div>
