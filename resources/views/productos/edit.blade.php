@@ -34,10 +34,16 @@
                                     <input type="number" name="cantidad" class="form-control" placeholder="Cantidad del Producto" value="{{$producto->cantidad}}">
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
+                            <div class="col-xs-12 col-sm-12 col-md-6 mt-2">
                                 <div class="form-group">
-                                    <strong>Tipo de producto</strong>
-                                    <input type="text" name="tipoProducto" class="form-control" placeholder="Tipo de producto" value="{{$producto->tipoProducto}}">
+                                    <strong>Tipo de Producto</strong>
+                                    <select name="tipoProducto" class="form-select" id="">
+                                        <option value="">-- Elige el tipo del producto --</option>
+                                        <option value="Aseo" @selected ( "Aseo" == $producto->tipoProducto )>Aseo</option>
+                                        <option value="Comida" @selected ( "Comida" == $producto->tipoProducto )>Comida</option>
+                                        <option value="Juguetes" @selected ( "Juguetes" == $producto->tipoProducto )>Juguetes</option>
+                                        <option value="Otros" @selected ( "Otros" == $producto->tipoProducto )>Otros</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">

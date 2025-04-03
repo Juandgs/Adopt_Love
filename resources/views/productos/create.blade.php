@@ -33,10 +33,16 @@
                                     <input type="number" name="cantidad" class="form-control" placeholder="Cantidad del Producto" >
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
+                            <div class="col-xs-12 col-sm-12 col-md-6 mt-2">
                                 <div class="form-group">
-                                    <strong>Tipo de producto</strong>
-                                    <input type="text" name="tipoProducto" class="form-control" placeholder="Tipo de producto" >
+                                    <strong>Tipo de Producto</strong>
+                                    <select name="tipoProducto" class="form-select" id="">
+                                        <option value="">-- Elige el tipo del producto --</option>
+                                        <option value="Aseo">Aseo</option>
+                                        <option value="Comida">Comida</option>
+                                        <option value="Juguetes">Juguetes</option>
+                                        <option value="Otros">Otros</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">

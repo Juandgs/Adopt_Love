@@ -16,7 +16,12 @@ class Productos extends Model
         'cantidad',
         'tipoProducto',
         'imagen',
+        'user_id'
     ];
+
+    public function User():BelongsTo{
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
     public function productosComprados():HasMany{
         return $this->hasMany(productosComprados::class, 'fk_id_productos');

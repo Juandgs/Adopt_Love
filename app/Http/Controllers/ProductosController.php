@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Productos;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse; 
+use Illuminate\Support\Facades\Auth;
 
 class ProductosController extends Controller
 {
@@ -34,7 +35,7 @@ class ProductosController extends Controller
             'nombre' => 'required',
             'precio' => 'required',
             'cantidad' => 'required',
-            'tipoProducto' => 'required',
+            'tipoProducto' => 'required|in:Aseo,Comida,Juguetes,Otros',
             'imagen' => 'required'
         ]);
         $producto = $request->all();
@@ -44,6 +45,7 @@ class ProductosController extends Controller
             $imagen->move($rutaGuardarImg,$imagenProducto);
             $producto['imagen'] = "$imagenProducto";
         }
+        $producto['user_id'] = Auth::id();
         Productos::create($producto);
         return redirect()->route('productos.index');
     }
@@ -74,7 +76,7 @@ class ProductosController extends Controller
             'precio' => 'required',
             'cantidad' => 'required',
             'tipoProducto' => 'required',
-            'imagen' => 'required'
+            'imagen' => 'nullable|image'
         ]);
         $prod = $request->all();
         if($imagen = $request->file('imagen')){
