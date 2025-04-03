@@ -1,0 +1,476 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(#755b5a2f, #75595700), url(../imagenes/IMAGEN\ P\ .png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 125vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ebebee;
+}
+
+nav {
+    background-color: #0000007a;
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #c95757c4;
+    border-radius: 10px;
+}
+
+.form-container {
+    background-color: #3534346e;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(172, 66, 66, 0);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.form-container h1 {
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="number"],
+.form-container select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: white;
+    background-color: #af3333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-container button:hover {
+    background-color: #da6b6b;
+    transform: scale(1.02);
+}
+
+.form-container a {
+    display: block;
+    margin-top: 10px;
+    color: #cfcfcf;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+.form-container .error-message {
+    color: #d47676b4;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.form-container .success-message {
+    color: #b85c5c;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+h6 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 750;
+}
+
+a {
+    text-decoration: none;
+}
+
+.carousel {
+    width: 100%;
+    margin: 0;
+}
+
+.carousel h2 {
+    font-size: 45px;
+    line-height: 38px;
+    padding-bottom: 50px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    color: black;
+}
+
+.carrusel-list {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 304px;
+    padding: 10px 0;
+    margin: 0 auto;
+    max-width: 90vw;
+    overflow: hidden;
+}
+
+.carrusel-track {
+    display: flex;
+    justify-content: center;
+    transition: 0.5s ease-in-out;
+}
+
+.carrusel {
+    width: 210px;
+    padding: 0 18px;
+    display: flex;
+    height: 100%;
+}
+
+.carrusel img {
+    object-fit: cover;
+    height: 300px;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.carrusel img:hover {
+    transform: scale(1.02);
+}
+
+.carrusel-arrow {
+    border-radius: 30px;
+    background-color: white;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    cursor: pointer;
+}
+
+.carrusel-arrow svg {
+    width: 12px;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.carrusel-prev {
+    left: 0;
+}
+
+.carrusel-next {
+    right: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: rgba(255, 0, 0, 0.589);
+}
+
+/* Estilo general para ambas secciones */
+#terminos-condiciones, #leyes-colombianas {
+    font-size: 0.8em; /* Tamaño de fuente pequeño */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin: 40px auto; /* Márgenes superior e inferior */
+    padding: 20px;
+    max-width: 800px; /* Limita el ancho */
+    background-color: #ffffff; /* Fondo suave */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Título de las secciones */
+#terminos-condiciones h3, #leyes-colombianas h3 {
+    font-size: 1.3em; /* Título más grande */
+    font-weight: bold;
+    color: #333; /* Color oscuro para el título */
+    margin-bottom: 10px; /* Separación inferior */
+}
+
+/* Estilo para los bloques de texto dentro de ambas secciones */
+.contenido-terminos, .contenido-leyes {
+    background-color: #00000096; /* Fondo blanco para los bloques */
+    padding: 15px;
+    margin-bottom: 15px; /* Espacio entre bloques */
+    border-left: 5px solid #6c757d; /* Línea lateral para destacar */
+    border-radius: 5px; /* Bordes redondeados */
+    color: #555; /* Texto gris */
+}
+
+/* Estilo de los párrafos dentro de los bloques */
+.contenido-terminos p, .contenido-leyes p {
+    margin: 0; /* Eliminar márgenes de los párrafos */
+    padding: 5px 0; /* Espacio interno en párrafos */
+}
+
+/* Estilo para los párrafos dentro de las secciones generales */
+#terminos-condiciones p, #leyes-colombianas p {
+    font-size: 0.9em; /* Tamaño de texto más pequeño */
+    color: #333; /* Color oscuro para los párrafos */
+}
+
+/* Estilo para el enlace de los Términos y Condiciones */
+#terminos-condiciones a {
+    color: #007bff7c; /* Color del enlace */
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+#terminos-condiciones a:hover {
+    text-decoration: underline; /* Subrayar el enlace al pasar el ratón */
+}
+
+/* Estilo para el pie de página */
+#terminos-condiciones footer, #leyes-colombianas footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #777777;
+}
+
+
+#adopt-message {
+    font-size: 0.8em;                
+    line-height: 1.6;                
+    margin: 40px auto;               
+    padding: 20px;                   
+    max-width: 800px;                
+    background-color: #ffffff;       
+    border: 1px solid #ddd;          
+    border-radius: 8px;              
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+/* Opcional: Si quieres un título con el mismo estilo que h3 */
+#adopt-message h3 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el textarea */
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    min-height: 100px;
+    resize: vertical;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Estilos para el input de archivo */
+.form-container input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para mostrar el nombre del archivo seleccionado */
+.form-container input[type="file"]::file-selector-button {
+    padding: 8px 12px;
+    background-color: #af3333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.form-container input[type="file"]::file-selector-button:hover {
+    background-color: #da6b6b;
+}
+
+
+/* Estilo adicional para que el diseño sea responsivo */
+@media (max-width: 768px) {
+    #terminos-condiciones, #leyes-colombianas {
+        padding: 15px; /* Menos espacio en pantallas pequeñas */
+        font-size: 0.75em; /* Texto ligeramente más pequeño */
+    }
+
+    #terminos-condiciones h3, #leyes-colombianas h3 {
+        font-size: 1.2em; /* Títulos más pequeños en pantallas pequeñas */
+    }
+}
+
+/* Reglas Responsive */
+@media screen and (max-width: 1024px) {
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .form-container {
+        max-width: 80%;
+        padding: 25px;
+    }
+
+    .carousel h2 {
+        font-size: 35px;
+    }
+
+    .carrusel img {
+        height: 250px;
+        width: 180px;
+    }
+
+    .carrusel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .form-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .form-container h1 {
+        font-size: 22px;
+    }
+
+    .form-container input,
+    .form-container button {
+        font-size: 14px;
+    }
+
+    .carousel {
+        margin: 0 5px;
+    }
+
+    .carrusel img {
+        width: 150px;
+        height: 200px;
+    }
+
+    .carrusel-arrow {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background-size: cover;
+        height: auto;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .form-container h1 {
+        font-size: 18px;
+    }
+
+    .form-container input,
+    .form-container select {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .form-container button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .carrusel img {
+        width: 120px;
+        height: 160px;
+    }
+
+    .carrusel-arrow {
+        width: 30px;
+        height: 30px;
+    }
+}

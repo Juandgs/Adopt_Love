@@ -1,38 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipo de usuario</title>
-    <link rel="stylesheet" href="{{ asset('css/Inicio.css') }}">
+    <link rel="stylesheet" href="{{ asset('estilos/estilos.css') }}">
+    <link rel="stylesheet" href="{{ asset('estilos/styles.css') }}">
+    <title>Adopt with Love</title>
 </head>
 <body>
-    <section id="cabeza">
-        <header id="inicio">
-            <div class="blanco"></div>
-            <div class="dec"></div>
-            <div class="dec2"></div>
-            <h1>Usuario</h1>
-            <img src="{{ asset('images/Logo.jpg') }}" alt="Logo" class="logo">
+    <main id="pagina-principal">
+        <header>
+            <h1>Adopt With Love</h1>
+            <img src="{{ asset('imagenes/logo.png') }}" alt="Logo" class="logo">
         </header>
-    </section>
-    <div class="separacion"></div>
-    <div id="tipo_usuario">
-        <div class="TU">
-        <button class="iniciar_sesion">
-            <img src="{{ asset('images/fondTienda.jpg') }}">
-            <h1><a href="{{ route('login') }}">Vendedor</a></h1>
-        </button>
-        <button class="iniciar_sesion" >
-            <img src="{{ asset('images/fondInteresado.png') }}">
-            <h1><a href="{{ route('login') }}">Interesado</a></h1>
-        </button>
-        <button class="iniciar_sesion" >
-            <img src="{{ asset('images/fondFundacion.jpg') }}">
-            <h1><a href="{{ route('login') }}">Fundacion</a></h1>
-        </button>
-        
-    </div>
-    <div class="separacion"></div>
+        <nav>
+            <ul>
+                <li><a href="#Clientes">Clientes</a></li>
+                <li><a href="{{ url('/TiendaAnimales.html') }}">Productos mascotas</a></li>
+                <li><a href="{{ url('/Fundaciones.html') }}">Fundaciones y Donaciones</a></li>
+            </ul>
+        </nav>
+
+        <section class="inicio">
+            <h2>¡Bienvenidos!</h2>
+        </section>
+
+        <div class="divicion1"></div>
+        <div class="divicion2"></div>
+
+        <section id="adopt-message">
+            <h3>¡Bienvenidos a Adopt With Love!</h3>
+            <p>En Adopt With Love, creemos que cada animal merece un hogar lleno de amor y cuidado. Nuestra misión es conectar a mascotas rescatadas con familias comprometidas, promoviendo la adopción responsable y el bienestar animal. ¡Juntos, podemos cambiar vidas, una adopción a la vez! ❤️</p>
+        </section>
+
+        <div class="divicion3"></div>
+        <header>
+            <h6 id="Clientes" class="titulo-pagina">Clientes</h6>
+            <a href="#pagina-principal">
+                <img src="{{ asset('imagenes/IMAGEN HOME-png.webp') }}" alt="Inicio" class="logo">
+            </a>
+            <img src="{{ asset('imagenes/logo.png') }}" alt="Logo" class="logo">
+        </header>
+        <section id="Clientes">
+            <div class="contenedor">
+                <div class="carousel">
+                    <div class="carrusel-list">
+                        <button class="carrusel-arrow carrusel-prev" id="button-prev">&lt;</button>
+                        <div class="carrusel-track" id="track">
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 2.jpg') }}" alt="Imagen 1"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 4.jpg') }}" alt="Imagen 2"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 25.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 6.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 19.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 14.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 23.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 12.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 8.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 15.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 26.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 22.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 16.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 17.jpg') }}" alt="Imagen 3"></a></div>
+                            <div class="carrusel"><a href="#"><img src="{{ asset('imagenes/IMAGEN 18.jpg') }}" alt="Imagen 3"></a></div>
+                        </div>
+                        <button class="carrusel-arrow carrusel-next" id="button-next">&gt;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage">
+                <div class="caption" id="caption"></div>
+            </div>
+            <script src="{{ asset('carrusel.js') }}"></script>
+        </section>
+
+        <footer>
+            <section id="terminos-condiciones">
+                <h4>Términos y Condiciones</h4>
+                <p>Al acceder y utilizar este sitio web, el usuario acepta y se compromete a cumplir con estos Términos y Condiciones...</p>
+                <p>Términos y Condiciones de Uso ... (resto del contenido)</p>
+            </section>
+            <section id="leyes-colombianas">
+                <h4>Leyes y Regulaciones</h4>
+                <p><strong>Ley 84 de 1989 - Ley de Protección Animal:</strong> La Ley 84 de 1989 establece la protección de los animales...</p>
+                <p><strong>Ley 1774 de 2016 - Maltrato Animal:</strong> Esta ley tipifica el maltrato animal como un delito penal...</p>
+                <p>Leyes y Regulaciones Relacionadas con Mascotas en Colombia ... (resto del contenido)</p>
+            </section>
+        </footer>
+    </main>
 </body>
 </html>
