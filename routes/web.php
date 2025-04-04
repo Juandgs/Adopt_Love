@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 require __DIR__.'/auth.php';
 Route::post('/register/vendedor', [TuControlador::class, 'store'])->name('register.vendedor.submit');
 Route::post('/register/fundacion', [TuControlador::class, 'store'])->name('register.fundacion.submit');

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información Adicional - Fundación</title>
-    <link rel="stylesheet" href="{{ asset('vistas registros/estilos/estilos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 </head>
 <body>
     <div class="form-container">
@@ -36,6 +36,6 @@
             <a href="{{ route('welcome') }}">Volver al inicio</a>
         </form>
     </div>
-    <script src="{{ asset('Formulario.js') }}" defer></script>
+    <script src="{{ asset('js/Formulario.js') }}" defer></script>
 </body>
 </html>

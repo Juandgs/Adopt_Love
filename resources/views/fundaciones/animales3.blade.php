@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellitas Felices</title>
-    <link rel="stylesheet" href="/Fundaciones.css">
+    <link rel="stylesheet" href="{{ asset('css/Fundaciones.css') }}">
 </head>
 <body>
     <header>
         <h1>Huellitas Felices</h1>
         <header>
             <a href="/fundaciones/Fundaciones.html">
-                <img src="/imagenes/IMAGEN VOLVER.webp" alt="volver" class="volver">
+                <img src="{{ asset('images/imagenes/IMAGENVOLVER.webp') }}" alt="volver" class="volver">
             </a>
             <a href="/indexdos.html">
-                <img src="/imagenes/IMAGEN HOME-png.webp" alt="Inicio" class="inicio">
+                <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
             </a>
             <img src="/imagenes/logo.png" alt="Logo" class="logo">
         </header>
@@ -22,10 +22,11 @@
     <div class="foundation-container">
         <div class="foundation">
             <img src="/fundaciones IMAGENES/GATO 3.jpg" alt="Gato 1">
+            <img src="{{ asset('images/fundaciones/GATO3.jpg') }}" alt="Gato 1">
             <h3>Mini</h3>
             <p>Edad: 3 meses</p>
             <button class="adopt-button" 
-                data-image='/fundaciones IMAGENES/GATO 3.jpg'
+                data-image="{{ asset('images/fundaciones/GATO3.jpg') }}"
                 data-message='Mini fue encontrada abandonada en la calle.'
                 data-name="Mini"
                 date-age="3 meses"
@@ -34,11 +35,11 @@
             </button>
         </div>
         <div class="foundation">
-            <img src="/fundaciones IMAGENES/GATO 4.jpg" alt="Gato 1">
+            <img src="{{ asset('images/fundaciones/GATO4.jpg') }}" alt="Gato 4">
             <h3>Lilo</h3>
             <p>Edad: 3 años</p>
             <button class="adopt-button" 
-                data-image='/fundaciones IMAGENES/GATO 4.jpg'
+                 data-image="{{ asset('images/fundaciones/GATO4.jpg') }}"
                 data-message='Lilo fue encontrada abandonada en la calle.'
                 data-name="Lilo"
                 date-age="3 años"
@@ -47,11 +48,11 @@
             </button>
         </div>
         <div class="foundation">
-            <img src="/fundaciones IMAGENES/PERRO 4.jpg" alt="Perro 1">
+            <img src="{{ asset('images/fundaciones/PERRO4.jpg') }}" alt="Perro 4">
             <h3>Ani</h3>
             <p>Edad: 8 años</p>
             <button class="adopt-button" 
-                data-image='/fundaciones IMAGENES/PERRO 4.jpg'
+                 data-image="{{ asset('images/fundaciones/PERRO4.jpg') }}"
                 data-message='Ani fue encontrada abandonada en la calle.'
                 data-name="Ani"
                 date-age="8 años"
@@ -60,11 +61,11 @@
             </button>
         </div>
         <div class="foundation">
-            <img src="/fundaciones IMAGENES/PERRO 5.jpg" alt="Perro 2">
+            <img src="{{ asset('images/fundaciones/PERRO5.jpg') }}" alt="perro 5">
             <h3>Maximo</h3>
             <p>Edad: 9 años</p>
             <button class="adopt-button" 
-                data-image='/fundaciones IMAGENES/PERRO 5.jpg'
+               data-image="{{ asset('images/fundaciones/PERRO5.jpg') }}"
                 data-message='Maximo fue encontrada abandonada en la calle.'
                 data-name="Maximo"
                 date-age="9 años"
@@ -73,11 +74,11 @@
             </button>
         </div>
         <div class="foundation">
-            <img src="/fundaciones IMAGENES/GATO 2.jpg" alt="Gato 2">
+            <img src="{{ asset('images/fundaciones/GATO2.jpg') }}" alt="Gato 2">
             <h3>Bruno</h3>
             <p>Edad: 5 años</p>
             <button class="adopt-button" 
-                data-image='/fundaciones IMAGENES/GATO 2.jpg'
+                data-image="{{ asset('images/fundaciones/GATO2.jpg') }}"
                 data-message='Bruno fue encontrada abandonada en la calle.'
                 data-name="Bruno"
                 date-age="5 años"
@@ -86,11 +87,11 @@
             </button>
         </div>
         <div class="foundation">
-            <img src="/fundaciones IMAGENES/PERROS 1.jpg" alt="Perros 3">
+            <img src="{{ asset('images/fundaciones/PERRO5.jpg') }}" alt="perro 5">
             <h3>Lulu y su cria</h3>
             <p>Edad: 6 años</p>
             <button class="adopt-button" 
-                data-image='/fundaciones IMAGENES/PERROS 1.jpg'
+                data-image="{{ asset('images/fundaciones/PERRO5.jpg') }}"
                 data-message='Lulu y su cria fue encontrada abandonada en la calle.'
                 data-name="Lulu y su cria"
                 date-age="6 años"
@@ -118,6 +119,6 @@
             class="whatsapp-donation-icon"
             data-whatsapp="573159143399">
     </div>
-    <script src="/Animales.js"></script>
+    <script src="{{ asset('js/Animales.js') }}"></script>
 </body>
 </html>

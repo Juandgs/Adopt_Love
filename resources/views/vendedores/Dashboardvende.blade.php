@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{{ asset('Dashboardgeneral.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/Dashboardgeneral.css') }}">
     <title>Dashboard Tienda</title>
 </head>
 <body>
     <header>
         <a href="{{ route('welcome') }}">
-            <img src="{{ asset('vistas registros/imagenes/IMAGEN HOME-png.webp') }}" alt="Inicio" class="inicio">
+            <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
         </a>
         <h1 class="titulo">Productos Vendidos</h1>
-        <img src="{{ asset('vistas registros/imagenes/logo.png') }}" alt="Logo de la tienda" class="logo">
+        <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo de la tienda" class="logo">
     </header>
 
     <section id="content">
