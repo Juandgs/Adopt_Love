@@ -27,7 +27,7 @@
         <header>
             <h3>Tipo de usuario</h3>
             <a href="{{ route('welcome') }}">
-                <img src="{{ asset('images/imagenes/IMAGEN HOME-png.webp') }}" alt="Inicio" class="logo">
+                <img src="{{ asset('images/imagenes/IMAGEN P.png') }}" alt="Inicio" class="logo">
             </a>
             <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">
         </header>
