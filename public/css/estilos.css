@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Times New Roman', Times, serif;
-    background: linear-gradient(#755b5a2f, #75595700), url('/images/imagenes/IMAGEN P.png');
+    background: linear-gradient(#755b5a2f, #75595700), url('/images/imagenes/imagenp.png');
+
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;

@@ -83,7 +83,7 @@
     <header>
         <h6 id="Clientes" class="titulo-pagina">Clientes</h6>
         <a href="{{ route('welcome') }}">
-            <img src="{{ asset('images/imagenes/IMAGEN HOME-png.webp') }}" alt="Inicio" class="logo">
+            <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="logo">
         </a>
         <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">
     </header>
@@ -97,77 +97,77 @@
                     <div class="carrusel-track" id="track">
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('images/imagenes/IMAGEN 2.jpg') }}" alt="Imagen 1">
+                                <img src="{{ asset('images/imagenes/IMAGEN2.jpg') }}" alt="Imagen 1">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('images/imagenes/IMAGEN 4.jpg') }}" alt="Imagen 2">
+                                <img src="{{ asset('images/imagenes/IMAGEN4.jpg') }}" alt="Imagen 2">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('images/imagenes/IMAGEN 25.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN25.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 6.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN6.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 19.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN19.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 14.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN4.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 23.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN23.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 12.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN12.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 8.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN8.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 15.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN15.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 26.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN26.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 22.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN22.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 16.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN16.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 17.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN17.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                         <div class="carrusel">
                             <a href="#">
-                                <img src="{{ asset('imagenes/IMAGEN 18.jpg') }}" alt="Imagen 3">
+                                <img src="{{ asset('images/imagenes/IMAGEN8.jpg') }}" alt="Imagen 3">
                             </a>
                         </div>
                     </div>
@@ -182,7 +182,8 @@
             <img class="modal-content" id="modalImage">
             <div class="caption" id="caption"></div>
         </div>
-        <script src="{{ asset('carrusel.js') }}"></script>
+        <script src="{{ asset('js/carrusel.js') }}"></script>
+
     </section>
 
     <footer>

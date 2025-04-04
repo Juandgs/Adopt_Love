@@ -26,6 +26,7 @@
             <a href="{{ route('welcome') }}">Volver al inicio</a>
         </div>
     </div>
-    <script src="{{ asset('general.js') }}" defer></script>
+    <script src="{{ asset('js/general.js') }}"></script>
+
 </body>
 </html>

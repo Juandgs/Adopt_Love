@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión Vendedor</title>
-    <link rel="stylesheet" href="{{ asset('estilos/estilos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 </head>
 <body>
     <div class="form-container">
@@ -26,6 +26,6 @@
             <a href="{{ route('welcome') }}">Volver al inicio</a>
         </div>
     </div>
-    <script src="{{ asset('general.js') }}" defer></script>
+    <script src="{{ asset('js/general.js') }}" defer></script>
 </body>
 </html>
