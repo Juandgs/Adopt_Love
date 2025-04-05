@@ -16,6 +16,16 @@
             <img src="{{asset(images/imagenes/logo.png)" alt="Logo" class="logo">
         </div>
     </header>
+    
+   <div class="controls-container">
+        <select id="product-category" class="category-dropdown">
+            <option value="">Todos los productos</option>
+            <option value="aseo">Productos de aseo</option>
+            <option value="comida">Productos de comida</option>
+            <option value="juguetes">Juguetes</option>
+            <option value="otros">otros</option>
+        </select>
+    </div>
 
     <main class="container">
         <section class="icon-bar">
