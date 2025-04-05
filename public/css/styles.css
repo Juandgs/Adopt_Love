@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 36px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    margin-bottom: 15px; /* Espacio entre el título y el menú */
+    background-color: #0000008a;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block; /* Para ajustar el ancho al contenido */
+}
+
+section{
+    display: block;
+    margin-bottom: 25vh;
+}
+
+h1{
+    background-color: #00000000;
+    padding: 20px 100px 0;
+    font-weight: bold;
+    left: -450px;
+    border-radius: 10px;
+}
+
+
+.logo{
+    z-index: 15;
+    position: relative;
+    width: 12vh;
+    border-radius: 50%;
+    right: -420px;
+    margin-bottom: -20px;
+}
+
+
+.inicio{
+    position: relative;
+    top: 10vh;
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: block;
+    background-image: url("/vistas 18, 20/img/");
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 20vh;
+}
+
+h2{
+    position: relative;
+    font-size: 60px;
+    top: 15vh;
+    width: 60vh;
+    height: 11%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+h3{
+    font-size: 36px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    margin-bottom: 10px; /* Espacio entre el título y el menú */
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block; /* Para ajustar el ancho al contenido */
+    margin-top: -20vh;
+}
+
+h4{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    margin-bottom: 10px; /* Espacio entre el título y el menú */
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block; /* Para ajustar el ancho al contenido */
+    margin-top: -20vh;
+}
+
+
+h5{
+    font-size: 36px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    margin-bottom: 10px; /* Espacio entre el título y el menú */
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block; /* Para ajustar el ancho al contenido */
+    
+}
+
+
+.icono{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #851a1a;
+    border: solid 3.5px #721919;
+    border-radius: 55%;
+    width: 41px;
+    height: 35px;
+    padding: 5px;
+    margin-top: 0 !important;
+}
+
+
+
+p{
+    font-size: 20px;
+    color: #3b3b3b;
+    font-weight: 900;
+    margin: 3%;
+}
+
+.img_public{
+    position: relative;
+    left: 10%;
+    width: 80%;
+    height: 50vh;
+    border-radius: 57px;
+}
+
+/* frame_20 */
+
+.fundacion{
+    top: 10vh;
+    height: 100vh;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: block;
+    background-image: url("../img/principal_fundacion.jpg");
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 20vh;
+}
+
+.contenedorF{
+    background-color: #a20500;
+    margin: 2% 0 11% 0;
+    height: auto;
+    padding: 2% 10% 5% 10%;
+}
+
+/* Estructura principal */
+.TU {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Mantener cuadros alineados horizontalmente */
+    justify-content: center; /* Centra los elementos dentro del contenedor */
+    padding: 15px;
+    background-color: #fccdcd83;
+    border-radius: 10px;
+    box-shadow: 0px 6px 8px rgba(236, 166, 187, 0);
+    grid-template-columns: 32% 32% 32%;
+    display: flex;
+}
+
+.TU > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: rgba(252, 127, 127, 0.658);
+    border-radius: 15px;
+    padding: 15px;
+    width: 200px; /* Fijar un ancho consistente para los cuadros */
+    height: 180px; /* Altura fija */
+    color: #fcfcfc;
+    box-shadow: 0px 4px 8px rgba(209, 111, 111, 0.596);
+    transition: transform 0.2s ease;
+}
+
+.TU > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(204, 66, 66, 0.521);
+}
+
+/* Imagen redonda */
+.TU img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px 0;
+}
+
+/* Botones */
+.botones a {
+    text-decoration: none;
+}
+
+.botones button {
+    background-color: #c91111ee;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background-color 0.2s ease;
+}
+
+.botones button:hover {
+    background-color: #f16161fb;
+}
+
+/* Texto */
+.texto p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+
+.divicion3{
+    position: relative;
+    top: 2vh;
+    width: 100%;
+    height: 10px;
+    background-color: #8b1d1d;
+    margin: 100px;
+    margin-left: 0px;
+}
+
+h6{
+    font-size: 36px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    margin-bottom: 10px; /* Espacio entre el título y el menú */
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block; /* Para ajustar el ancho al contenido */
+    text-align: center;
+}
+
+
+
+.mensaje {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    z-index: 1000;
+    opacity: 0.9;
+}
+
+.mensaje.exito {
+    background-color: #af4c4cbb;
+}
+
+.mensaje.error {
+    background-color: #f43636e1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 24px;
+        padding: 5px;
+    }
+
+    .logo {
+        width: 8vh;
+        right: -50px;
+    }
+
+    .inicio h2 {
+        font-size: 32px;
+        top: 10vh;
+        width: 80%;
+    }
+
+    .img_public {
+        width: 90%;
+        height: auto;
+    }
+
+    .TU {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .TU > div {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .TU img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .botones button {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    .logo {
+        right: -100px;
+    }
+
+    .inicio h2 {
+        font-size: 40px;
+        width: 70%;
+    }
+
+    .img_public {
+        width: 85%;
+        height: auto;
+    }
+
+    .TU {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .TU > div {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1200px) {
+    header h1 {
+        font-size: 40px;
+    }
+
+    .inicio h2 {
+        font-size: 60px;
+        width: 60%;
+    }
+
+    .TU > div {
+        width: 220px;
+        height: 200px;
+    }
+}
