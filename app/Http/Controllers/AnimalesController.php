@@ -13,29 +13,7 @@ class AnimalesController extends Controller
      */
     public function index()
     {
-        $productos = Productos::all();
-        return view('Animales.index', compact('productos'));
-    }
-
-    public function filtros(Request $request){
-        $productosA = Productos::where('tipoProducto', "Aseo")->get();
-        $productosC = Productos::where('tipoProducto', "Comida")->get();
-        $productosJ = Productos::where('tipoProducto', "Juguetes")->get();
-        $productosO = Productos::where('tipoProducto', "Otros")->get();
-        $productos = Productos::all();
-
-        $Oreo = "Aseo";
-        if($Oreo == "Aseo"){
-            return $productosA;
-        }elseif ($Oreo == "Comida") {
-            return $productosC;
-        }elseif ($Oreo == "Juguetes") {
-            return $productosJ;
-        }elseif ($Oreo == "Otros") {
-            return $productosO;
-        }else{
-            return $productos;
-        }
+        
     }
 
     /**

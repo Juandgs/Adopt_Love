@@ -18,6 +18,11 @@ class ProductosController extends Controller
         return view('productos.index', compact('productos'));
     }
 
+    public function mostrar(){
+        $productos = Productos::all();
+        return view('productos.tiendaanimales', compact('productos'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -45,9 +50,56 @@ class ProductosController extends Controller
             $imagen->move($rutaGuardarImg,$imagenProducto);
             $producto['imagen'] = "$imagenProducto";
         }
-        $producto['user_id'] = Auth::id();
+        /*$producto['vendedor_id'] = Auth::id();*/
         Productos::create($producto);
         return redirect()->route('productos.index');
+    }
+
+    /*public function filtros(Request $request){
+        $productosA = Productos::where('tipoProducto', "Aseo")->get();
+        $productosC = Productos::where('tipoProducto', "Comida")->get();
+        $productosJ = Productos::where('tipoProducto', "Juguetes")->get();
+        $productosO = Productos::where('tipoProducto', "Otros")->get();
+        $productos = Productos::all();
+
+        $Oreo = "Aseo";
+        if($Oreo == "Aseo"){
+            return $productosA;
+        }elseif ($Oreo == "Comida") {
+            return $productosC;
+        }elseif ($Oreo == "Juguetes") {
+            return $productosJ;
+        }elseif ($Oreo == "Otros") {
+            return $productosO;
+        }else{
+            return $productos;
+        }
+    }*/
+
+    public function filtros(Request $request)
+    {
+    $tipo = $request->input('tipoProducto'); // Obtiene el filtro del formulario
+
+    if ($tipo) {
+        $productos = Productos::where('tipoProducto', $tipo)->get();
+    } else {
+        $productos = Productos::all(); // Si no hay filtro, muestra todos
+    }
+
+    return view('productos.tiendaanimales', compact('productos'));
+    }
+
+    public function filtros2(Request $request)
+    {
+    $tipo = $request->input('tipoProducto');
+
+    if ($tipo) {
+        $productos = Productos::where('tipoProducto', $tipo)->paginate(10);
+    } else {
+        $productos = Productos::paginate(10);
+    }
+
+    return view('productos.index', compact('productos'));
     }
 
     /**
