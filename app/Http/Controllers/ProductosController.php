@@ -50,7 +50,7 @@ class ProductosController extends Controller
             $imagen->move($rutaGuardarImg,$imagenProducto);
             $producto['imagen'] = "$imagenProducto";
         }
-        /*$producto['vendedor_id'] = Auth::id();*/
+        $producto['vendedor_id'] = Auth::id();
         Productos::create($producto);
         return redirect()->route('productos.index');
     }

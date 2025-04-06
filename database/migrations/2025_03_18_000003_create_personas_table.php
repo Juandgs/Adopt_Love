@@ -15,12 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('contacto');
-            $table->date('fecha_nacimiento');
+            $table->string('telefono');
+            $table->string('correo');
             $table->string('password');
             $table->timestamps();
         });
+        
     }
+  
+       
 
     /**
      * Reverse the migrations.

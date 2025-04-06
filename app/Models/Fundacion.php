@@ -11,8 +11,10 @@ class Fundacion extends Model
 
     protected $fillable = [
         'nombre',
-        'numero',
-        'correo'
+        'telefono',
+        'correo',
+        'ciudad',
+        'descripcion'
     ];
 
     public function encargadoFund():HasMany{

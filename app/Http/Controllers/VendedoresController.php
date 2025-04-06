@@ -15,20 +15,13 @@ use Illuminate\View\View;
 
 class VendedoresController extends PersonasController
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return View('auth.register');
-    }
 
     /**
      * Mostrar el formulario para crear un nuevo recurso.
      */
     public function create()
     {
-        return view('auth.register');
+        return view('vendedores.register_vendedor');
     }
 
     /**
@@ -47,37 +40,36 @@ class VendedoresController extends PersonasController
         return $this->vendedorUS;
     }
 
-    /*public function store(Request $request): RedirectResponse
-    {
-    $persona = parent::store($request);
+    public function store(Request $request): RedirectResponse
+{
+    // Guardar persona
+    $request->validate([
+        'nombre' => ['required', 'string', 'max:255'],
+        'apellido' => ['required', 'string', 'max:255'],
+        'telefono' => ['required', 'string', 'max:255'],
+        'correo' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:personas'],
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+    ]);
 
-    if (!$persona || !$persona->id) {
-        return redirect()->back()->with('error', 'No se pudo obtener el ID de la persona.');
-    }
+    $persona = Personas::create([
+        'nombre' => $request->nombre,
+        'apellido' => $request->apellido,
+        'correo' => $request->correo,
+        'telefono' => $request->telefono,
+        'password' => Hash::make($request->password),
+    ]);
 
+    event(new Registered($persona));
+    Auth::login($persona);
+
+    // Guardar vendedor usando ID de la persona autenticada
     Vendedores::create([
         'persona_id' => $persona->id,
     ]);
 
-    return redirect()->route('dashboard');
-    } */
+    return redirect()->route('productos.index');
+}
 
-    public function store(Request $request): RedirectResponse
-    {
-    parent::store($request);//llamar un metodo de la clase padre
-
-    $personaId = Auth::id();
-
-    if (!$personaId) {
-        return redirect()->route('login')->with('error', 'Debes iniciar sesión primero.');
-    }
-    
-    Vendedores::create([
-        'persona_id' => $personaId,
-    ]);
-
-    return redirect()->route('dashboard');
-    }
 
     /**
      * Show the form for editing the specified resource.

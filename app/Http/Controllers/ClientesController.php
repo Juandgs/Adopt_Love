@@ -15,20 +15,9 @@ use Illuminate\View\View;
 
 class ClientesController extends PersonasController
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return view('auth.register');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('auth.register');
+        return view('clientes.register_clientes');
     }
 
     /**
@@ -57,19 +46,31 @@ class ClientesController extends PersonasController
     
     public function store(Request $request): RedirectResponse
     {
-    parent::store($request);//llamar un metodo de la clase padre
-
-    $personaId = Auth::id();
-
-    if (!$personaId) {
-        return redirect()->route('login')->with('error', 'Debes iniciar sesión primero.');
-    }
-    
-    Clientes::create([
-        'persona_id' => $personaId,
+    // Guardar persona
+    $request->validate([
+        'nombre' => ['required', 'string', 'max:255'],
+        'apellido' => ['required', 'string', 'max:255'],
+        'telefono' => ['required', 'string', 'max:255'],
+        'correo' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:personas'],
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
     ]);
 
-    return redirect()->route('dashboard');
+    $persona = Personas::create([
+        'nombre' => $request->nombre,
+        'apellido' => $request->apellido,
+        'correo' => $request->correo,
+        'telefono' => $request->telefono,
+        'password' => Hash::make($request->password),
+    ]);
+
+    event(new Registered($persona));
+    Auth::login($persona);
+    
+    Clientes::create([
+        'persona_id' => $persona->id,
+    ]);
+
+    return redirect()->route('home');
     }
     /**
      * Show the form for editing the specified resource.
