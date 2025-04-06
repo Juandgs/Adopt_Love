@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li><a href="#Clientes">Clientes</a></li>
-                <li><a href="{{ url('/TiendaAnimales.html') }}">Productos mascotas</a></li>
+                <li><a href="{{ route('productos.mostrar') }}">Productos mascotas</a></li>
                 <li><a href="{{ url('/Fundaciones.html') }}">Fundaciones y Donaciones</a></li>
             </ul>
         </nav>
