@@ -10,7 +10,7 @@
     <header>
         <h1>Fundaciones de Mascotas</h1>
         <header>
-            <a href="{{ asset('home.blade.php') }}">
+            <a href="{{ route('home') }}">
                 <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
             </a>
             <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">
@@ -18,17 +18,17 @@
     </header>
 
     <div class="foundation-container">
-        <div class="foundation" onclick="openFoundationPage('{{ asset('fundaciones/animales.html') }}')">
+        <div class="foundation" onclick="window.location.href='{{ route('fundaciones.animales') }}'">
             <img src="{{ asset('images/fundaciones/IMAGEN1.jpg') }}" alt="Fundación 1">
             <h3>Fundación Amor Animal</h3>
             <p>Ubicación: Bogotá</p>
         </div>
-        <div class="foundation" onclick="openFoundationPage('{{ asset('fundaciones/animales2.html') }}')">
+        <div class="foundation" onclick="window.location.href='{{ route('fundaciones.animales2') }}'">
             <img src="{{ asset('images/fundaciones/IMAGEN2.jpg') }}" alt="Fundación 2">
             <h3>Huellitas Felices</h3>
             <p>Ubicación: Bogotá</p>
         </div>
-        <div class="foundation" onclick="openFoundationPage('{{ asset('fundaciones/animales3.html') }}')">
+        <div class="foundation" onclick="window.location.href='{{ route('fundaciones.animales3') }}'">
             <img src="{{ asset('images/fundaciones/IMAGEN11.jpg') }}" alt="Fundación 3">
             <h3>Patitas de Amor</h3>
             <p>Ubicación: Bogotá</p>

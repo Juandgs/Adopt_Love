@@ -10,10 +10,10 @@
     <header>
         <h1>Fundación Amor Animal</h1>
         <header>
-            <a href="{{ asset('fundaciones/Fundaciones.html') }}">
+            <a href="{{ route('fundaciones.general') }}">
                 <img src="{{ asset('images/imagenes/IMAGENVOLVER.webp') }}" alt="volver" class="volver">
             </a>
-            <a href="{{ asset('indexdos.html') }}">
+            <a href="{{ route('home') }}">
                 <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
             </a>
             <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">

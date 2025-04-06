@@ -9,10 +9,10 @@
 <body>
     <header>
         <h1>Huellitas Felices</h1>
-        <a href="{{ asset('fundaciones/Fundaciones.html') }}">
+        <a href="{{ route('fundaciones.general') }}">
             <img src="{{ asset('images/imagenes/IMAGENVOLVER.webp') }}" alt="volver" class="volver">
         </a>
-        <a href="{{ asset('indexdos.html') }}">
+        <a href="{{ route('home') }}">
             <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
         </a>
         <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">
@@ -20,7 +20,7 @@
 
     <div class="foundation-container">
         <div class="foundation">
-            <img src="{{ asset('images/imagenes/fundaciones/GATO3.jpg') }}" alt="Gato 1">
+            <img src="{{ asset('images/fundaciones/GATO3.jpg') }}" alt="Gato 1">
             <h3>Mini</h3>
             <p>Edad: 3 meses</p>
             <button class="adopt-button" 

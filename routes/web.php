@@ -52,13 +52,13 @@ Route::middleware('auth')->group(function () {
     
     
 });
+
 Route::get('/productos/mostrar', [ProductosController::class, 'mostrar'])->name('productos.mostrar');
 Route::get('/productos/filtro', [ProductosController::class, 'filtros'])->name('productos.filtro');
 Route::get('/productos/filtroCrud', [ProductosController::class, 'filtros2'])->name('productos.filtro2');
 Route::resource('/productos', ProductosController::class);
 Route::resource('animales', AnimalesController::class);
 
-require __DIR__.'/auth.php';
 /*
 Route::post('/register/vendedor', [TuControlador::class, 'store'])->name('register.vendedor.submit');
 Route::post('/register/fundacion', [TuControlador::class, 'store'])->name('register.fundacion.submit');
@@ -85,7 +85,7 @@ Route::post('/inicio-sesion/vendedor', [AuthController::class, 'loginVendedor'])
 // Rutas de logout (ejemplo)
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');*/
 
-
+/*
 // Rutas para las vistas de fundaciones
 Route::get('/fundaciones', function () {
     return file_get_contents(public_path('fundaciones/fundaciones.html'));
@@ -102,6 +102,18 @@ Route::get('/fundaciones/animales2', function () {
 Route::get('/fundaciones/animales3', function () {
     return file_get_contents(public_path('fundaciones/animales3.html'));
 });
+
+*/
+
+//RUTAS DE LAS FUNDACIONES
+Route::get('/fundaciones/general', [FundacionController::class, 'indexGeneral'])->name('fundaciones.general');
+Route::get('/fundaciones/animales', [FundacionController::class, 'mostrarAnimales'])->name('fundaciones.animales');
+Route::get('/fundaciones/animales2', [FundacionController::class, 'mostrarAnimales2'])->name('fundaciones.animales2');
+Route::get('/fundaciones/animales3', [FundacionController::class, 'mostrarAnimales3'])->name('fundaciones.animales3');
+
+Route::resource('/fundaciones', FundacionController::class);
+
+
 
 // Ruta para indexdos.html (asumiendo que está en public)
 Route::get('/indexdos.html', function () {

@@ -10,13 +10,13 @@
     <header>
         <h1>Huellitas Felices</h1>
         <header>
-            <a href="/fundaciones/Fundaciones.html">
+            <a href="{{ route('fundaciones.general') }}">
                 <img src="{{ asset('images/imagenes/IMAGENVOLVER.webp') }}" alt="volver" class="volver">
             </a>
-            <a href="/indexdos.html">
+            <a href="{{ route('home') }}">
                 <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
             </a>
-            <img src="/imagenes/logo.png" alt="Logo" class="logo">
+            <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">
         </header>
     </header>
     <div class="foundation-container">

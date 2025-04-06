@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('cantidad');
             $table->string('tipoProducto');
             $table->string('imagen');
-            /*$table->foreignId('vendedor_id')->constrained('vendedores')->onDelete('cascade');*/
+            $table->foreignId('vendedor_id')->constrained('vendedores')->onDelete('cascade');
             $table->timestamps();
         });
     }

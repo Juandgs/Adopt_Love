@@ -67,7 +67,7 @@ class VendedoresController extends PersonasController
         'persona_id' => $persona->id,
     ]);
 
-    return redirect()->route('home');
+    return redirect()->route('productos.index');
 }
 
 
