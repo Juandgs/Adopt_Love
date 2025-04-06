@@ -3,10 +3,11 @@
 use App\Http\Controllers\AnimalesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PersonasController;
+use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\VendedoresController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\EncargadoFundController;
-
+use App\Models\Vendedores;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -37,12 +38,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('/productos', ProductosController::class);
-    Route::resource('/animales', AnimalesController::class);
+    
+    
 });
-
+Route::get('/productos/mostrar', [ProductosController::class, 'mostrar'])->name('productos.mostrar');
+Route::get('/productos/filtro', [ProductosController::class, 'filtros'])->name('productos.filtro');
+Route::get('/productos/filtroCrud', [ProductosController::class, 'filtros2'])->name('productos.filtro2');
+Route::resource('/productos', ProductosController::class);
+Route::resource('animales', AnimalesController::class);
 
 require __DIR__.'/auth.php';
+/*
 Route::post('/register/vendedor', [TuControlador::class, 'store'])->name('register.vendedor.submit');
 Route::post('/register/fundacion', [TuControlador::class, 'store'])->name('register.fundacion.submit');
 Route::post('/register/cliente', [TuControlador::class, 'store'])->name('register.cliente.submit');
@@ -72,7 +78,7 @@ Route::get('/inicio-sesion/vendedor', [AuthController::class, 'showLoginFormVend
 Route::post('/inicio-sesion/vendedor', [AuthController::class, 'loginVendedor']);
 
 // Rutas de logout (ejemplo)
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');*/
 
 
 // Rutas para las vistas de fundaciones
@@ -107,9 +113,9 @@ Route::get('/Fundaciones.css', function () {
     return response()->file(public_path('Fundaciones.css'), ['Content-Type' => 'text/css']);
 });
 // Ruta para la tienda
-Route::get('/tiendaanimales.html', function () {
+/*Route::get('/tiendaanimales.html', function () {
     return file_get_contents(public_path('tiendaanimales.html'));
-});
+});*/
 
 // Ruta para Tienda.css
 Route::get('/Tienda.css', function () {
@@ -120,3 +126,7 @@ Route::get('/Tienda.css', function () {
 Route::get('/Tienda.js', function () {
     return response()->file(public_path('Tienda.js'), ['Content-Type' => 'application/javascript']);
 });
+
+
+Route::resource('Vendedores', VendedoresController::class);
+

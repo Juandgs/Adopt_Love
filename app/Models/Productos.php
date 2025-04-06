@@ -16,12 +16,13 @@ class Productos extends Model
         'cantidad',
         'tipoProducto',
         'imagen',
-        'user_id'
+        /*'vendedor_id'*/
+        
     ];
 
-    public function User():BelongsTo{
-        return $this->belongsTo(User::class, 'user_id');
-    }
+    /*public function Vendedor():BelongsTo{
+        return $this->belongsTo(Vendedores::class, 'vendedor_id');
+    }*/
 
     public function productosComprados():HasMany{
         return $this->hasMany(productosComprados::class, 'fk_id_productos');
