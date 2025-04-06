@@ -8,10 +8,9 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>Información Adicional de la Fundación</h1>
-        <form method="POST" action="/register/fundacion/store">
+        <h1>Información de la Fundación</h1>
+        <form method="POST" action="{{ route('fundacion.store') }}">
             @csrf
-            
             <label for="nombreFundacion">Nombre de la Fundación:</label>
             <input type="text" id="nombreFundacion" name="nombre" placeholder="Nombre de la Fundación" required>
 
@@ -31,6 +30,5 @@
             <a href="{{ route('welcome') }}">Volver al inicio</a>
         </form>
     </div>
-    <script src="{{ asset('js/Formulario.js') }}" defer></script>
 </body>
 </html>

@@ -64,7 +64,8 @@ class FundacionController extends Controller
         ]);
     
 
-    return redirect()->route('fundaciones.register_fundacion');
+        return redirect()->route('register.encargadofundacion', ['fundacion' => $fundacion->id]);
+
     }
 
     /**
