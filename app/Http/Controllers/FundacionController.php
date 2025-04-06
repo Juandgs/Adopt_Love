@@ -25,6 +25,23 @@ class FundacionController extends Controller
         return view('fundaciones.register_datosfundacion');
     }
 
+    public function indexGeneral()
+    {
+        return view('fundaciones.fundaciones');
+    }
+    public function mostrarAnimales()
+    {
+        return view('fundaciones.animales');
+    }
+    public function mostrarAnimales2()
+    {
+        return view('fundaciones.animales2');
+    }
+    public function mostrarAnimales3()
+    {
+        return view('fundaciones.animales3');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
