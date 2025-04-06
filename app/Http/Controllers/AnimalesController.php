@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Animales;
 use Illuminate\Http\Request;
+use App\Models\Productos;
 
 class AnimalesController extends Controller
 {
@@ -12,7 +13,7 @@ class AnimalesController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
