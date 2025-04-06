@@ -8,9 +8,11 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>Registro de Fundación</h1>
+        <h1>Registro Encargado de Fundación</h1>
         <form method="POST" action="{{ route('encargadofundacion.store') }}">
             @csrf
+
+            <input type="hidden" name="fundacion_id" value="{{ $fundacionId }}">
 
             <label for="nombreEncargadoFundacion">Nombre:</label>
             <input type="text" id="nombreCliente" name="nombre" placeholder="Nombre" required>

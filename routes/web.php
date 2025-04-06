@@ -30,8 +30,8 @@ Route::post('/register/cliente/store', [ClientesController::class, 'store'])->na
 Route::get('/register/fundacion', [FundacionController::class, 'create'])->name('register.fundacion');
 Route::post('/register/fundacion/store', [FundacionController::class, 'store'])->name('fundacion.store');
 
-Route::get('/register/ecnfundacion', [EncargadoFundController::class, 'create'])->name('register.encargadofundacion');
-Route::post('/register/encfundacion/store', [EncargadoFundController::class, 'store'])->name('encargadofundacion.store ');
+Route::get('/register/encargadofundacion/{fundacion}', [EncargadoFundController::class, 'createid'])->name('register.encargadofundacion');
+Route::post('/register/encfundacion/store', [EncargadoFundController::class, 'store'])->name('encargadofundacion.store');
 
 
 Route::get('/login', [loginController::class, 'create'])->name('login');
