@@ -6,8 +6,8 @@ body {
     background-color: #ebebee;
 }
 
-header {
-    background-color: #af4c4c;
+
+    background-color: #af4c61;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -115,6 +115,7 @@ header h1 {
 
 .donate-button {
     background-color: #af3333;
+
     color: white;
     padding: 15px 20px;
     font-size: 18px;
@@ -124,6 +125,7 @@ header h1 {
 }
 
 .donate-button:hover {
+
     background-color: #da6b6b;
 }
 
@@ -169,7 +171,7 @@ header h1 {
 }
 
 .modal button:hover {
-    background-color: #a04545;
+    background-color: #a0455c;
 }
 
 /* Botón "Adoptar" */
@@ -177,6 +179,7 @@ header h1 {
     margin-top: 10px;
     padding: 10px 20px;
     background-color: #f04c4c;
+
     color: white;
     border: none;
     border-radius: 4px;
@@ -185,6 +188,7 @@ header h1 {
 
 .adopt-button:hover {
     background-color: #d84343;
+
 }
 
 /* Imagen de chat */
@@ -238,6 +242,7 @@ header h1 {
 
 .send-button {
     background-color: #af4c4c;
+
     color: white;
     padding: 10px;
     border: none;
@@ -319,6 +324,7 @@ header h1 {
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
+
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
