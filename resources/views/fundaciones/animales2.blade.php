@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellitas Felices</title>
+    <link rel="stylesheet" href="{{ asset('css/Fundaciones.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Huellitas Felices</h1>
+        <a href="{{ asset('fundaciones/Fundaciones.html') }}">
+            <img src="{{ asset('images/imagenes/IMAGENVOLVER.webp') }}" alt="volver" class="volver">
+        </a>
+        <a href="{{ asset('indexdos.html') }}">
+            <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
+        </a>
+        <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">
+    </header>
+
+    <div class="foundation-container">
+        <div class="foundation">
+            <img src="{{ asset('images/imagenes/fundaciones/GATO3.jpg') }}" alt="Gato 1">
+            <h3>Mini</h3>
+            <p>Edad: 3 meses</p>
+            <button class="adopt-button" 
+                data-image="{{ asset('images/fundaciones/GATO3.jpg') }}"
+                data-message="Mini fue encontrado abandonado en un parque"
+                data-name="Mini"
+                data-age="3 meses"
+                data-whatsapp="573213229529">
+                Adoptar
+            </button>
+        </div>
+
+        <div class="foundation">
+            <img src="{{ asset('images/fundaciones/GATO4.jpg') }}" alt="Gato 1">
+            <h3>Lilo</h3>
+            <p>Edad: 3 años</p>
+            <button class="adopt-button" 
+                data-image="{{ asset('images/fundaciones/GATO4.jpg') }}"
+                data-message="Lilo fue encontrado abandonado en un parque"
+                data-name="Lilo"
+                data-age="3 años"
+                data-whatsapp="573213229529">
+                Adoptar
+            </button>
+        </div>
+
+        <div class="foundation">
+            <img src="{{ asset('images/fundaciones/PERRO4.jpg') }}" alt="Perro 1">
+            <h3>Ani</h3>
+            <p>Edad: 8 años</p>
+            <button class="adopt-button" 
+                data-image="{{ asset('images/fundaciones/PERRO4.jpg') }}"
+                data-message="Ani fue encontrado abandonado en un parque"
+                data-name="Ani"
+                data-age="8 años"
+                data-whatsapp="573213229529">
+                Adoptar
+            </button>
+        </div>
+
+        <div class="foundation">
+            <img src="{{ asset('images/fundaciones/PERRO5.jpg') }}" alt="Perro 2">
+            <h3>Maximo</h3>
+            <p>Edad: 9 años</p>
+            <button class="adopt-button" 
+                data-image="{{ asset('images/fundaciones/PERRO5.jpg') }}"
+                data-message="Maximo fue encontrado abandonado en un parque"
+                data-name="Maximo"
+                data-age="9 años"
+                data-whatsapp="573213229529">
+                Adoptar
+            </button>
+        </div>
+
+        <div class="foundation">
+            <img src="{{ asset('images/fundaciones/GATO2.jpg') }}" alt="Gato 2">
+            <h3>Bruno</h3>
+            <p>Edad: 5 años</p>
+            <button class="adopt-button" 
+                data-image="{{ asset('images/fundaciones/GATO2.jpg') }}"
+                data-message="Bruno fue encontrado abandonado en un parque"
+                data-name="Bruno"
+                data-age="5 años"
+                data-whatsapp="573213229529">
+                Adoptar
+            </button>
+        </div>
+
+        <div class="foundation">
+            <img src="{{ asset('images/fundaciones/PERROS1.jpg') }}" alt="Perros 3">
+            <h3>Lulu y su cria</h3>
+            <p>Edad: 6 años</p>
+            <button class="adopt-button" 
+                data-image="{{ asset('images/fundaciones/PERROS1.jpg') }}"
+                data-message="Lulu y su cría fueron encontrados en un callejón."
+                data-name="Lulu y su cría"
+                data-age="6 años"
+                data-whatsapp="573213229529">
+                Adoptar
+            </button>
+        </div>
+    </div>
+
+    <div id="animalModal" class="modal">
+        <div class="modal-content">
+            <img id="animalImage" src="" alt="Animal">
+            <p id="animalMessage"></p>
+            <div class="modal-buttons">
+                <button id="whatsappButton" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Adopción Directa
+                </button>
+                <button id="closeModal" class="close-button">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="whatsapp-donation-container">
+        <div class="donation-bubble">Donaciones aquí</div>
+        <img src="{{ asset('images/imagenes/whatsapp.webp') }}" 
+            alt="Donar por WhatsApp" 
+            class="whatsapp-donation-icon"
+            data-whatsapp="573213229529">
+    </div>
+
+    <script src="{{ asset('js/Animales.js') }}"></script>
+
+</body>
+</html>
