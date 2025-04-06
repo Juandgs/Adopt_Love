@@ -2,26 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Personas;
 use Illuminate\Http\Request;
+use App\Models\Personas;
 use App\Http\Controllers\PersonasController;
+use App\Models\encargadoFund;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Fundacion;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
-
 class EncargadoFundController extends PersonasController
 {
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('auth.register');
+        return view('fundaciones.register_fundacion');
     }
     
     /**
@@ -44,19 +40,30 @@ class EncargadoFundController extends PersonasController
 
     public function store(Request $request): RedirectResponse
     {
-    parent::store($request);//llamar un metodo de la clase padre
-
-    $personaId = Auth::id();
-
-    if (!$personaId) {
-        return redirect()->route('login')->with('error', 'Debes iniciar sesión primero.');
-    }
+        $request->validate([
+            'nombre' => ['required', 'string', 'max:255'],
+            'apellido' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'string', 'max:255'],
+            'correo' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:personas'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
     
-    Fundacion::create([
-        'persona_id' => $personaId,
+        $persona = Personas::create([
+            'nombre' => $request->nombre,
+            'apellido' => $request->apellido,
+            'correo' => $request->correo,
+            'telefono' => $request->telefono,
+            'password' => Hash::make($request->password),
+        ]);
+    
+        event(new Registered($persona));
+        Auth::login($persona);
+    
+    encargadoFund::create([
+        'persona_id' => $persona->id,
     ]);
 
-    return redirect()->route('dashboard');
+    return redirect()->route('home');
     }
     
     /**

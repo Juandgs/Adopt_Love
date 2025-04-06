@@ -10,23 +10,30 @@ use App\Models\Clientes;
 use App\Models\Personas;
 use App\Models\Vendedores;
 use App\Models\encargadoFund;
+use Illuminate\Support\Facades\Auth;
+
 
 class ClienteMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        // Verificar autenticación (ejemplo)
-         // Buscar el usuario en la base de datos
-         $personas = Personas::where('correo', $request->correo)->first();
-         $cliente = Clientes::where('persona_id', $personas->id)->first();
+        $persona = Auth::user(); // Obtenemos el usuario autenticado
 
-
-        if ($cliente == null || !$personas) {
+        if (!$persona) {
             return response()->json(['error' => 'No autenticado'], 401);
         }
 
-        // Registrar la solicitud en el log
-        Log::info('Solicitud de usuario', ['Persona' => $personas->id, 'url' => $request->url()]);
+        $cliente = Clientes::where('persona_id', $persona->id)->first();
+
+        if (!$cliente) {
+            return response()->json(['error' => 'No autorizado como cliente'], 403);
+        }
+
+        Log::info('Solicitud de usuario cliente', [
+            'Persona ID' => $persona->id,
+            'Correo' => $persona->correo,
+            'URL' => $request->url(),
+        ]);
 
         return $next($request);
     }
