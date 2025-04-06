@@ -14,7 +14,7 @@ class Vendedores extends Model
         'persona_id'
     ];
 
-    public function perosnas():BelongsTo{
+    public function personas():BelongsTo{
         return $this->belongsTo(Personas::class, 'persona_id');
     }
     public function productos():HasMany{

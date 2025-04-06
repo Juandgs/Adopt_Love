@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('fundacions', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->integer('numero');
+            $table->string('telefono');
             $table->string('correo');
+            $table->string('ciudad');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

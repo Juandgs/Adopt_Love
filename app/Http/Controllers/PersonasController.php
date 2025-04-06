@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller; 
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -44,26 +46,28 @@ class PersonasController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'nombre' => ['required', 'string', 'max:255'],
-            'apellido' => ['required', 'string', 'max:255'],
-            'correo' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.Personas::class],
-            'fecha_nacimiento' => ['required', 'Date'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+    $request->validate([
+        'nombre' => ['required', 'string', 'max:255'],
+        'apellido' => ['required', 'string', 'max:255'],
+        'telefono' => ['required', 'string', 'max:255'],
+        'correo' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:personas'],
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+    ]);
 
-        $persona = Personas::create([
-            'nombre' => $request->nombre,
-            'apellido' => $request->apellido,
-            'correo' => $request->correo,
-            'fecha_nacimiento' => $request->fecha_nacimiento,
-            'password' => Hash::make($request->password),
-        ]);
+    $persona = Personas::create([
+        'nombre' => $request->nombre,
+        'apellido' => $request->apellido,
+        'correo' => $request->correo,
+        'telefono' => $request->telefono,
+        'password' => Hash::make($request->password),
+    ]);
 
-        event(new Registered($persona));
+    event(new Registered($persona));
+    Auth::login($persona);
 
-        return $persona;
-    }
+    return $persona;
+}
+
 
     public function login(Personas $personas)
     {

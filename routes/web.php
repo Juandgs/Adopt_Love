@@ -5,28 +5,37 @@ use App\Http\Controllers\PersonasController;
 use App\Http\Controllers\VendedoresController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\EncargadoFundController;
-
-
+use App\Http\Controllers\FundacionController;
+use App\Http\Controllers\loginController;
+use App\Http\Middleware\ClienteMiddleware;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\Role;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/home', function () {return view('home');})->name('home');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
 
-Route::get('/registroVendedor', [VendedoresController::class, 'create'])->name('registroVendedor');
-Route::post('/registroVendedor/store', [VendedoresController::class, 'store']);
+// VENDEDOR
+Route::get('/register/vendedor', [VendedoresController::class, 'create'])->name('register.vendedor');
+Route::post('/register/vendedor/store', [VendedoresController::class, 'store'])->name('vendedores.store');
 
-Route::get('/registroComprador', [ClientesController::class, 'create'])->name('registroComprador');
-Route::post('/registroComprador/store', [ClientesController::class, 'store']);
+// CLIENTE
+Route::get('/register/cliente', [ClientesController::class, 'create'])->name('register.cliente');
+Route::post('/register/cliente/store', [ClientesController::class, 'store'])->name('clientes.store');
 
-Route::get('/registroEncargado', [EncargadoFundController::class, 'create'])->name('registroEncargado');
-Route::post('/registroEncargado/store', [EncargadoFundController::class, 'store']);
+// FUNDACIÓN
+Route::get('/register/fundacion', [FundacionController::class, 'create'])->name('register.fundacion');
+Route::post('/register/fundacion/store', [FundacionController::class, 'store'])->name('fundacion.store');
 
+Route::get('/register/ecnfundacion', [EncargadoFundController::class, 'create'])->name('register.encargadofundacion');
+Route::post('/register/encfundacion/store', [EncargadoFundController::class, 'store'])->name('encargadofundacion.store ');
+
+
+Route::get('/login', [loginController::class, 'create'])->name('login');
+Route::post('/login/submit', [loginController::class, 'show'])->name('login.submit');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -39,24 +48,12 @@ Route::middleware('auth')->group(function () {
 });
 
 
-require __DIR__.'/auth.php';
-Route::post('/register/vendedor', [TuControlador::class, 'store'])->name('register.vendedor.submit');
-Route::post('/register/fundacion', [TuControlador::class, 'store'])->name('register.fundacion.submit');
-Route::post('/register/cliente', [TuControlador::class, 'store'])->name('register.cliente.submit');
-Route::post('/login/vendedor', [TuControlador::class, 'login'])->name('login.vendedor.submit');
-Route::post('/login/fundacion', [TuControlador::class, 'login'])->name('login.fundacion.submit');
-Route::post('/login/cliente', [TuControlador::class, 'login'])->name('login.cliente.submit');
+//require __DIR__.'/auth.php';
+/*
 Route::post('/register/datosfundacion', [TuControlador::class, 'storeDatosFundacion'])->name('register.datosfundacion.submit');
 // rutas nuevas vistas por verificar 
 // Rutas de registro
-Route::get('/registro/fundacion', [AuthController::class, 'showRegistrationFormFundacion'])->name('register.fundacion');
-Route::post('/registro/fundacion', [AuthController::class, 'registerFundacion']);
 
-Route::get('/registro/cliente', [AuthController::class, 'showRegistrationFormCliente'])->name('register.cliente');
-Route::post('/registro/cliente', [AuthController::class, 'registerCliente']);
-
-Route::get('/registro/vendedor', [AuthController::class, 'showRegistrationFormVendedor'])->name('register.vendedor');
-Route::post('/registro/vendedor', [AuthController::class, 'registerVendedor']);
 
 // Rutas de inicio de sesión
 Route::get('/inicio-sesion/fundacion', [AuthController::class, 'showLoginFormFundacion'])->name('login.fundacion');
@@ -69,7 +66,7 @@ Route::get('/inicio-sesion/vendedor', [AuthController::class, 'showLoginFormVend
 Route::post('/inicio-sesion/vendedor', [AuthController::class, 'loginVendedor']);
 
 // Rutas de logout (ejemplo)
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');*/
 
 
 // Rutas para las vistas de fundaciones

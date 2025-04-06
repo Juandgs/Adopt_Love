@@ -26,9 +26,7 @@
     <main id="tipo_usuario">
         <header>
             <h3>Tipo de usuario</h3>
-            <a href="{{ route('welcome') }}">
-                <img src="{{ asset('images/imagenes/IMAGEN P.png') }}" alt="Inicio" class="logo">
-            </a>
+
             <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">
         </header>
         <div class="TU">
@@ -41,7 +39,7 @@
                     <a href="{{ route('register.fundacion') }}">
                         <button type="button">Registro</button>
                     </a>
-                    <a href="{{ route('login.fundacion') }}">
+                    <a href="{{ route('login') }}">
                         <button type="button">Iniciar sesión</button>
                     </a>
                 </div>
@@ -56,7 +54,7 @@
                     <a href="{{ route('register.cliente') }}">
                         <button type="button">Registro</button>
                     </a>
-                    <a href="{{ route('login.cliente') }}">
+                    <a href="{{ route('login') }}">
                         <button type="button">Iniciar sesión</button>
                     </a>
                 </div>
@@ -71,7 +69,7 @@
                     <a href="{{ route('register.vendedor') }}">
                         <button type="button">Registro</button>
                     </a>
-                    <a href="{{ route('login.vendedor') }}">
+                    <a href="{{ route('login') }}">
                         <button type="button">Iniciar sesión</button>
                     </a>
                 </div>
@@ -82,9 +80,6 @@
     <div class="divicion3"></div>
     <header>
         <h6 id="Clientes" class="titulo-pagina">Clientes</h6>
-        <a href="{{ route('welcome') }}">
-            <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="logo">
-        </a>
         <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">
     </header>
     <section id="Clientes">

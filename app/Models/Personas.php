@@ -3,18 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Personas extends Model
+class Personas extends Authenticatable
 {
     protected $table = 'personas';
 
     protected $fillable = [
         'nombre',
         'apellido',
-        'contacto',
-        'fecha_nacimiento',
-        'contraseña'
+        'telefono',
+        'correo',
+        'password',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
     ];
 
     public function vendedores():HasOne{
