@@ -16,10 +16,13 @@ class VendedorMiddleware
         // Verificar autenticación (ejemplo)
          // Buscar el usuario en la base de datos
          $personas = Personas::where('correo', $request->correo)->first();
+         if ($personas == null) {
+            return response()->json(['error' => 'No autenticado'], 401);
+        }
          $vendedores = Vendedores::where('persona_id', $personas->id)->first();
 
         if ($vendedores == null) {
-            return response()->json(['error' => 'No autenticado'], 401);
+            return response()->json(['error' => 'No tienes los permisos'], 401);
         }
 
         // Registrar la solicitud en el log
