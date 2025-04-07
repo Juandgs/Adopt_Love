@@ -57,6 +57,10 @@ Route::get('/productos/mostrar', [ProductosController::class, 'mostrar'])->name(
 Route::get('/productos/filtro', [ProductosController::class, 'filtros'])->name('productos.filtro');
 Route::get('/productos/filtroCrud', [ProductosController::class, 'filtros2'])->name('productos.filtro2');
 Route::resource('/productos', ProductosController::class);
+
+Route::get('/animales/mostrar', [AnimalesController::class, 'mostrar'])->name('animales.mostrar');
+Route::get('/animales/filtro', [AnimalesController::class, 'filtros'])->name('animales.filtro');
+Route::get('/animales/filtroCrud', [AnimalesController::class, 'filtros2'])->name('animales.filtro2');
 Route::resource('animales', AnimalesController::class);
 
 /*

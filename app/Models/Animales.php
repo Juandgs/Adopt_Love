@@ -13,13 +13,15 @@ class Animales extends Model
     protected $fillable = [
         'nombre',
         'edad',
-        'fundacion_id',
-        'razas_id'
+        'raza',
+        'tipoAnimal',
+        'imagen',
+        'fundacion_id'
     ];
 
-    public function razas():BelongsTo{
+    /*public function razas():BelongsTo{
         return $this->belongsTo(Razas::class, 'razas_id');
-    }
+    }*/
 
     public function adopciones():HasMany{
         return $this->hasMany(Adopciones::class, 'fk_id_animales');
