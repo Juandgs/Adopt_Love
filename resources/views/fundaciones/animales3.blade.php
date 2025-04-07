@@ -114,7 +114,7 @@
     </div>
     <div class="whatsapp-donation-container">
         <div class="donation-bubble">Donaciones aquí</div>
-        <img src="/imagenes/whatsapp.webp" 
+        <img src="{{ asset('images/imagenes/whatsapp.webp') }}" 
             alt="Donar por WhatsApp" 
             class="whatsapp-donation-icon"
             data-whatsapp="573159143399">
