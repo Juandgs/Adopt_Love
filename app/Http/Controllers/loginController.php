@@ -39,7 +39,7 @@ class loginController extends Controller
             Auth::login($personas);
 
             if($vendedores !== null){
-                return redirect()->route('home')->with('success', 'Bienvenido, ' . $personas->nombre);
+                return redirect()->route('productos.index')->with('success', 'Bienvenido, ' . $personas->nombre);
             }elseif($cliente !== null){
                 return redirect()->route('home')->with('success', 'Bienvenido, ' . $personas->nombre);
             }elseif($Encargado !== null){
