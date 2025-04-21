@@ -9,6 +9,9 @@
 </head>
 <body>
     <header>
+        <a href="{{ route('fundaciones.general') }}">
+            <img src="{{ asset('images/imagenes/cerrar-sesion.png') }}" alt="volver" class="volver">
+        </a>
         <a href="{{ route('welcome') }}">
             <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
         </a>

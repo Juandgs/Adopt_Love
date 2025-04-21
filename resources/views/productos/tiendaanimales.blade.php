@@ -9,6 +9,9 @@
 <body>
     <header class="header">
         <h1>Productos para tus mascotas</h1>
+        <a href="{{ route('fundaciones.general') }}">
+            <img src="{{ asset('images/imagenes/cerrar-sesion.png') }}" alt="volver" class="volver">
+        </a>
         <a href="{{ route('home') }}">
             <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
         </a>

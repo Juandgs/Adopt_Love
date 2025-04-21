@@ -36,6 +36,9 @@
         <div class="divicion3"></div>
         <header>
             <h6 id="Clientes" class="titulo-pagina">Clientes</h6>
+            <a href="{{ route('fundaciones.general') }}">
+                <img src="{{ asset('images/imagenes/cerrar-sesion.png') }}" alt="volver" class="volver">
+            </a>
             <a href="#pagina-principal">
                 <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="logo">
             </a>

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,19 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellitas Felices</title>
     <link rel="stylesheet" href="{{ asset('css/Fundaciones.css') }}">
+    @auth 
+    <li class="nav-item">
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            @csrf
+           
+            <a href="{{ route('home') }}" class="boton-volver">Inicio</a>
+            <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
+
+        </form>
+    </li>
+@endauth
+
 </head>
 <body>
     <header>
         <h1>Huellitas Felices</h1>
         <a href="{{ route('fundaciones.general') }}">
-            <img src="{{ asset('images/imagenes/IMAGENVOLVER.webp') }}" alt="volver" class="volver">
+            <img src="{{ asset('images/imagenes/cerrar-sesion.png') }}" alt="volver" class="volver">
         </a>
         <a href="{{ route('home') }}">
             <img src="{{ asset('images/imagenes/IMAGENHOME-png.webp') }}" alt="Inicio" class="inicio">
         </a>
         <img src="{{ asset('images/imagenes/logo.png') }}" alt="Logo" class="logo">
     </header>
-
+    
     <div class="foundation-container">
         <div class="foundation">
             <img src="{{ asset('images/fundaciones/GATO3.jpg') }}" alt="Gato 1">
