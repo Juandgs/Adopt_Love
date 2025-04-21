@@ -59,7 +59,7 @@ class ProductosController extends Controller
             $producto['imagen'] = "$imagenProducto";
         }
         $persona = Auth::user();
-        $vendedor = \App\Models\Vendedores::where('persona_id', $persona->id)->first();
+        $vendedor = Vendedores::where('persona_id', $persona->id)->first();
         if ($vendedor) {
             $producto['vendedor_id'] = $vendedor->id;
         }

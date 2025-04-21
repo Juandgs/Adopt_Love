@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Animales;
+use App\Models\encargadoFund;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse; 
 use Illuminate\Support\Facades\Auth;
+
 
 class AnimalesController extends Controller
 {
@@ -14,7 +16,10 @@ class AnimalesController extends Controller
      */
     public function index()
     {
-        $animales = Animales::paginate(5);
+        $persona = Auth::user();
+        $encargadoFund = encargadoFund::where('persona_id', $persona->id)->first();
+        $animales = Animales::where('fundacion_id', $encargadoFund->fk_id_fundacion)->paginate(5);
+        //$animales = Animales::paginate(5);
         return view('animales.index', compact('animales'));
     }
 
@@ -45,7 +50,10 @@ class AnimalesController extends Controller
             $imagen->move($rutaGuardarImg,$imagenAnimal);
             $animale['imagen'] = "$imagenAnimal";
         }
-        $animale['fundacion_id'] = Auth::id();
+        $persona = Auth::user();
+        $encargadoFund = encargadoFund::where('persona_id', $persona->id)->first();
+        $animale['fundacion_id'] = $encargadoFund->fk_id_fundacion;
+        //$animale['fundacion_id'] = $Fund;
         Animales::create($animale);
         return redirect()->route('animales.index');
     }
