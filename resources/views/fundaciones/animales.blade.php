@@ -26,89 +26,24 @@
     </header>
 
     <div class="foundation-container">
-        <div class="foundation">
-            <img src="{{ asset('images/fundaciones_imagenes/PERRO1.jpg') }}" alt="Perro 1">
-            <h3>Max</h3>
-            <p>Edad: 1 año</p>
-            <button class="adopt-button" 
-                data-image="{{ asset('images/fundaciones_imagenes/PERRO1.jpg') }}"
-                data-message="Max fue encontrado abandonado en un parque"
-                data-name="Max"
-                data-age="1 año"
-                data-whatsapp="573209867126">
-                Adoptar
-            </button>
-        </div>
-
-        <div class="foundation">
-            <img src="{{ asset('images/fundaciones_imagenes/GATO1.jpg') }}" alt="Gato 1">
-            <h3>Luna</h3>
-            <p>Edad: 4 años</p>
-            <button class="adopt-button" 
-                data-image="{{ asset('images/fundaciones_imagenes/GATO1.jpg') }}" 
-                data-message="Luna fue rescatada en malas condiciones de salud."
-                data-name="Luna"
-                data-age="4 años"
-                data-whatsapp="573209867126">
-                Adoptar
-            </button>
-        </div>
-
-        <div class="foundation">
-            <img src="{{ asset('images/fundaciones_imagenes/PERRO2.jpg') }}" alt="Perro 2">
-            <h3>Eva</h3>
-            <p>Edad: 6 años</p>
-            <button class="adopt-button" 
-                data-image="{{ asset('images/fundaciones_imagenes/PERRO2.jpg') }}"
-                data-message="Eva fue encontrada abandonada en la calle."
-                data-name="Eva"
-                data-age="6 años"
-                data-whatsapp="573209867126">
-                Adoptar
-            </button>
-        </div>
-
-        <div class="foundation">
-            <img src="{{ asset('images/fundaciones_imagenes/PERRO3.jpg') }}" alt="Perro 3">
-            <h3>Marco</h3>
-            <p>Edad: 2 años</p>
-            <button class="adopt-button" 
-                data-image="{{ asset('images/fundaciones_imagenes/PERRO3.jpg') }}" 
-                data-message="Marco fue encontrado abandonado en la calle."
-                data-name="Marco"
-                data-age="2 años"
-                data-whatsapp="573209867126">
-                Adoptar
-            </button>
-        </div>
-
-        <div class="foundation">
-            <img src="{{ asset('images/fundaciones_imagenes/GATO2.jpg') }}" alt="Gato 2">
-            <h3>Bigotes</h3>
-            <p>Edad: 5 años</p>
-            <button class="adopt-button" 
-                data-image="{{ asset('images/fundaciones_imagenes/GATO2.jpg') }}"
-                data-message="Bigotes fue rescatado en un callejón."
-                data-name="Bigotes"
-                data-age="5 años"
-                data-whatsapp="573209867126">
-                Adoptar
-            </button>
-        </div>
-
-        <div class="foundation">
-            <img src="{{ asset('images/fundaciones_imagenes/GATOS3.jpg') }}" alt="Gato 3">
-            <h3>Maxi y sus crías</h3>
-            <p>Edad: 3 años</p>
-            <button class="adopt-button" 
-                data-image="{{ asset('images/fundaciones_imagenes/GATOS3.jpg') }}"
-                data-message="Maxi y sus bebés fueron encontrados en un parque."
-                data-name="Maxi y sus crías"
-                data-age="3 años"
-                data-whatsapp="573209867126">
-                Adoptar
-            </button>
-        </div>
+        @forelse ($animales as $animal)
+            <div class="foundation">
+                <img src="{{ asset('images/' . $animal->imagen) }}" alt="{{ $animal->nombre }}">
+                <h3>{{ $animal->nombre }}</h3>
+                <p>Edad: {{ $animal->edad }} {{ $animal->edad == 1 ? 'año' : 'años' }}</p>
+                <p>Raza: {{ $animal->raza }}</p>
+                <button class="adopt-button" 
+                    data-image="{{ asset('images/' . $animal->imagen) }}"
+                    data-message="{{ $animal->nombre }} está en adopción desde la fundación {{ $fundacion->nombre }}."
+                    data-name="{{ $animal->nombre }}"
+                    data-age="{{ $animal->edad }} años"
+                    data-whatsapp="573209867126">
+                    Adoptar
+                </button>
+            </div>
+        @empty
+            <p style="text-align: center;">No hay animales disponibles en esta fundación por el momento.</p>
+        @endforelse
     </div>
 
     <div id="animalModal" class="modal">

@@ -112,7 +112,7 @@ Route::get('/fundaciones/animales3', function () {
 
 //RUTAS DE LAS FUNDACIONES
 Route::get('/fundaciones/general', [FundacionController::class, 'indexGeneral'])->name('fundaciones.general');
-Route::get('/fundaciones/animales', [FundacionController::class, 'mostrarAnimales'])->name('fundaciones.animales');
+Route::get('/fundaciones/{id}/animales', [FundacionController::class, 'mostrarAnimales'])->name('fundaciones.animales');
 Route::get('/fundaciones/animales2', [FundacionController::class, 'mostrarAnimales2'])->name('fundaciones.animales2');
 Route::get('/fundaciones/animales3', [FundacionController::class, 'mostrarAnimales3'])->name('fundaciones.animales3');
 

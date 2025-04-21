@@ -24,7 +24,7 @@ class Personas extends Authenticatable
         'remember_token',
     ];
 
-    public function vendedores():HasOne{
+    public function vendedor():HasOne{
         return $this->hasOne(Vendedores::class, 'persona_id');
     }
     public function Clientes():HasOne{

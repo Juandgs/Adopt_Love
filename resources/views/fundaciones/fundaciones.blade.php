@@ -21,21 +21,14 @@
     </header>
 
     <div class="foundation-container">
-        <div class="foundation" onclick="window.location.href='{{ route('fundaciones.animales') }}'">
-            <img src="{{ asset('images/fundaciones/IMAGEN1.jpg') }}" alt="Fundación 1">
-            <h3>Fundación Amor Animal</h3>
-            <p>Ubicación: Bogotá</p>
+    @foreach ($fundaciones as $fundacion)
+        <div class="foundation" onclick="window.location.href='{{ route('fundaciones.animales', ['id' => $fundacion->id]) }}'">
+            <img src="{{ asset('images/' . ($fundacion->imagen ?? 'fundaa.webp')) }}" alt="{{ $fundacion->nombre }}">
+            <h3>{{ $fundacion->nombre }}</h3>
+            <p>Ubicación: {{ $fundacion->ciudad ?? 'No especificada' }}</p>
+            <p>{{ $fundacion->descripcion }}</p>
         </div>
-        <div class="foundation" onclick="window.location.href='{{ route('fundaciones.animales2') }}'">
-            <img src="{{ asset('images/fundaciones/IMAGEN2.jpg') }}" alt="Fundación 2">
-            <h3>Huellitas Felices</h3>
-            <p>Ubicación: Bogotá</p>
-        </div>
-        <div class="foundation" onclick="window.location.href='{{ route('fundaciones.animales3') }}'">
-            <img src="{{ asset('images/fundaciones/IMAGEN11.jpg') }}" alt="Fundación 3">
-            <h3>Patitas de Amor</h3>
-            <p>Ubicación: Bogotá</p>
-        </div>
+    @endforeach
     </div>
 
     <script>
