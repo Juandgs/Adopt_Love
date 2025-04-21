@@ -10,6 +10,7 @@ use App\Http\Controllers\EncargadoFundController;
 use App\Models\Vendedores;
 use App\Http\Controllers\FundacionController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\Auth\LogoutController; // Importa el LogoutController
 use App\Http\Middleware\ClienteMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Role;
@@ -19,6 +20,7 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/home', function () {return view('home');})->name('home');
+
 
 
 // VENDEDOR
@@ -49,7 +51,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
+
 });
 
 Route::get('/productos/mostrar', [ProductosController::class, 'mostrar'])->name('productos.mostrar');
@@ -71,7 +73,7 @@ Route::post('/login/fundacion', [TuControlador::class, 'login'])->name('login.fu
 Route::post('/login/cliente', [TuControlador::class, 'login'])->name('login.cliente.submit');
 
 Route::post('/register/datosfundacion', [TuControlador::class, 'storeDatosFundacion'])->name('register.datosfundacion.submit');
-// rutas nuevas vistas por verificar 
+// rutas nuevas vistas por verificar
 // Rutas de registro
 
 
@@ -149,4 +151,3 @@ Route::get('/Tienda.js', function () {
 
 
 Route::resource('Vendedores', VendedoresController::class);
-
