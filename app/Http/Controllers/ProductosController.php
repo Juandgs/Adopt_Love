@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Productos;
+use App\Models\Vendedores;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse; 
 use Illuminate\Support\Facades\Auth;
+
 
 class ProductosController extends Controller
 {
@@ -14,7 +16,11 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        $productos = Productos::paginate(5);
+        // 1. Obtener la persona logueada
+        $persona = Auth::user();
+        // 2. Buscar el vendedor relacionado a esa persona
+        $vendedor = Vendedores::where('persona_id', $persona->id)->first();
+        $productos = Productos::where('vendedor_id', $vendedor->id)->paginate(5);
         return view('productos.index', compact('productos'));
     }
 
@@ -34,6 +40,8 @@ class ProductosController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
+
     public function store(Request $request):RedirectResponse
     {
         $request->validate([
@@ -50,10 +58,19 @@ class ProductosController extends Controller
             $imagen->move($rutaGuardarImg,$imagenProducto);
             $producto['imagen'] = "$imagenProducto";
         }
-        $producto['vendedor_id'] = Auth::id();
+        $persona = Auth::user();
+        $vendedor = Vendedores::where('persona_id', $persona->id)->first();
+        if ($vendedor) {
+            $producto['vendedor_id'] = $vendedor->id;
+        }
+
+        //$vendedorId = $vendedor->id;
+        //$producto['vendedor_id'] = Auth::id();
+        //$producto['vendedor_id'] = Vendedores::id();
         Productos::create($producto);
         return redirect()->route('productos.index');
     }
+    
 
     /*public function filtros(Request $request){
         $productosA = Productos::where('tipoProducto', "Aseo")->get();

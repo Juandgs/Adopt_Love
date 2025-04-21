@@ -6,6 +6,7 @@ use App\Models\Fundacion;
 use Illuminate\Http\Request;
 use App\Models\Personas;
 use App\Http\Controllers\PersonasController;
+use App\Models\Animales;
 use App\Models\encargadoFund;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
@@ -13,6 +14,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+
 
 class FundacionController extends Controller
 {
@@ -27,12 +29,17 @@ class FundacionController extends Controller
 
     public function indexGeneral()
     {
-        return view('fundaciones.fundaciones');
+        $fundaciones = Fundacion::all();
+        return view('fundaciones.fundaciones', compact('fundaciones'));
     }
-    public function mostrarAnimales()
+
+    public function mostrarAnimales($id)
     {
-        return view('fundaciones.animales');
+        $fundacion = Fundacion::findOrFail($id);
+        $animales = Animales::where('fundacion_id', $fundacion->id)->get();
+        return view('fundaciones.animales', compact('fundacion', 'animales'));
     }
+
     public function mostrarAnimales2()
     {
         return view('fundaciones.animales2');

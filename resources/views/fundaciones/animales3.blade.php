@@ -11,6 +11,9 @@
         <h1>Huellitas Felices</h1>
         <header>
             <a href="{{ route('fundaciones.general') }}">
+                <img src="{{ asset('images/imagenes/cerrar-sesion.png') }}" alt="volver" class="volver">
+            </a>
+            <a href="{{ route('fundaciones.general') }}">
                 <img src="{{ asset('images/imagenes/IMAGENVOLVER.webp') }}" alt="volver" class="volver">
             </a>
             <a href="{{ route('home') }}">

@@ -34,11 +34,26 @@ return [
     | Supported: "session"
     |
     */
-
+/*
     'guards' => [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+    ],
+*/
+
+    'guards' => [
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'personas',
+        ],
+    ],
+
+    'providers' => [
+    'personas' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Personas::class,
         ],
     ],
 
@@ -58,7 +73,7 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
+/*
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
@@ -70,7 +85,7 @@ return [
         //     'table' => 'users',
         // ],
     ],
-
+*/
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
