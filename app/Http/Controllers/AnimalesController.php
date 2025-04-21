@@ -45,7 +45,7 @@ class AnimalesController extends Controller
             $imagen->move($rutaGuardarImg,$imagenAnimal);
             $animale['imagen'] = "$imagenAnimal";
         }
-        $animale['fundacion_id'] = Auth::id();
+        /*$animale['fundacion_id'] = Auth::id();*/
         Animales::create($animale);
         return redirect()->route('animales.index');
     }

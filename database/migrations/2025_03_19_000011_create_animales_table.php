@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('raza');
             $table->string('tipoAnimal');
             $table->string('imagen');
-            $table->foreignId('fundacion_id')->constrained('fundacions')->onDelete('cascade');
+            /*$table->foreignId('fundacion_id')->constrained('fundacions')->onDelete('cascade');*/
             /*$table->foreignId('razas_id')->constrained('razas')->onDelete('cascade');*/
             $table->timestamps();
         });
