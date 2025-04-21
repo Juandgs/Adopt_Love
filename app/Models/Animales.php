@@ -16,7 +16,7 @@ class Animales extends Model
         'raza',
         'tipoAnimal',
         'imagen',
-        'fundacion_id'
+        /*'fundacion_id'*/
     ];
 
     /*public function razas():BelongsTo{

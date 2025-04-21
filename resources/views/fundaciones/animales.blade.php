@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundación Amor Animal</title>
     <link rel="stylesheet" href="{{ asset('css/Fundaciones.css') }}">
+    
+
 </head>
 <body>
     <header>
         <h1>Fundación Amor Animal</h1>
         <header>
+            <a href="{{ route('fundaciones.general') }}">
+                <img src="{{ asset('images/imagenes/cerrar-sesion.png') }}" alt="volver" class="volver">
+            </a>
             <a href="{{ route('fundaciones.general') }}">
                 <img src="{{ asset('images/imagenes/IMAGENVOLVER.webp') }}" alt="volver" class="volver">
             </a>

@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="form-container">
-        <h1>Inicio de Sesión Cliente</h1>
+        <h1>Inicio de Sesión</h1>
         <form id="loginCliente" data-tipo="cliente" method="POST" action="{{ route('login.submit') }}">
             @csrf
             <label for="correoInicioCliente">Correo Electrónico:</label>

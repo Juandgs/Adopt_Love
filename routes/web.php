@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\administradorController;
 use App\Http\Controllers\AnimalesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PersonasController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\EncargadoFundController;
 use App\Models\Vendedores;
 use App\Http\Controllers\FundacionController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\Auth\LogoutController; // Importa el LogoutController
 use App\Http\Middleware\ClienteMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Role;
@@ -19,6 +21,7 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/home', function () {return view('home');})->name('home');
+
 
 
 // VENDEDOR
@@ -40,16 +43,20 @@ Route::post('/register/encfundacion/store', [EncargadoFundController::class, 'st
 Route::get('/login', [loginController::class, 'create'])->name('login');
 Route::post('/login/submit', [loginController::class, 'show'])->name('login.submit');
 
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
+
+Route::get('/dashboard', [administradorController::class, 'index'])->name('dashboard');
+Route::get('/productos/pdf', [administradorController::class, 'generarPDFproductos'])->name('productos.pdf');
+Route::get('/animales/pdf', [administradorController::class, 'generarPDFanimales'])->name('animales.pdf');
 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
+
 });
 
 Route::get('/productos/mostrar', [ProductosController::class, 'mostrar'])->name('productos.mostrar');
@@ -71,7 +78,7 @@ Route::post('/login/fundacion', [TuControlador::class, 'login'])->name('login.fu
 Route::post('/login/cliente', [TuControlador::class, 'login'])->name('login.cliente.submit');
 
 Route::post('/register/datosfundacion', [TuControlador::class, 'storeDatosFundacion'])->name('register.datosfundacion.submit');
-// rutas nuevas vistas por verificar 
+// rutas nuevas vistas por verificar
 // Rutas de registro
 
 
@@ -114,6 +121,7 @@ Route::get('/fundaciones/{id}/animales', [FundacionController::class, 'mostrarAn
 Route::get('/fundaciones/animales2', [FundacionController::class, 'mostrarAnimales2'])->name('fundaciones.animales2');
 Route::get('/fundaciones/animales3', [FundacionController::class, 'mostrarAnimales3'])->name('fundaciones.animales3');
 
+
 Route::resource('/fundaciones', FundacionController::class);
 
 
@@ -149,4 +157,3 @@ Route::get('/Tienda.js', function () {
 
 
 Route::resource('Vendedores', VendedoresController::class);
-
